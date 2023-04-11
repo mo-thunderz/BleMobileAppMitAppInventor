@@ -77,9 +77,12 @@ void setup() {
   
   pBLE2902 = new BLE2902();
   pBLE2902->setNotifications(true);
+  
+  // Add all Descriptors here
   pCharacteristic->addDescriptor(pBLE2902);
-
   pCharacteristic_2->addDescriptor(new BLE2902());
+  
+  // After defining the desriptors, set the callback functions
   pCharacteristic_2->setCallbacks(new CharacteristicCallBack());
   
   // Start the service
