@@ -37,8 +37,7 @@ class MyServerCallbacks: public BLEServerCallbacks {
 
 class CharacteristicCallBack: public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic *pChar) override { 
-    std::string pChar2_value_stdstr = pChar->getValue();
-    String pChar2_value_string = String(pChar2_value_stdstr.c_str());
+    String pChar2_value_string = pChar->getValue();                // This part is updated slightly from the video
     int pChar2_value_int = pChar2_value_string.toInt();
     Serial.println("pChar2: " + String(pChar2_value_int)); 
   }
